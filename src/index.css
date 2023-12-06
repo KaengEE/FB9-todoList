@@ -58,6 +58,8 @@ button {
   padding: 6px 8px;
 }
 
+/* 삭제, 수정버튼 */
+
 .todo-item {
   margin: 30px auto;
   border: 1px solid #f2f2f2;
@@ -101,4 +103,86 @@ button {
 
 .todo-item .edit:hover {
   color: green;
+}
+
+/* 모달창 */
+.modal-container {
+  /* 모달창 크기 */
+  width: 500px;
+  height: 200px;
+
+  /* 중앙 배치 */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* 모달창 디자인 */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* 그림자 효과 */
+
+  /* 가운데 정렬 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 모달창 닫기 버튼 */
+.modal-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: #555;
+}
+
+/* 모달 내부 내용 */
+.modal-content {
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+/* 입력란 스타일 */
+.modal-input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 수정 버튼 스타일 */
+.edit-button {
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.edit-button:hover {
+  background-color: #38853b;
+}
+
+/* 닫기 버튼 */
+.modal-close {
+  padding: 6px 10px;
+  background-color: #ccc;
+  color: #555;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background-color: #777;
+  color: #333;
 }
