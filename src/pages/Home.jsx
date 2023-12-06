@@ -1,14 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TodoList from "../components/TodoList";
 import TodoForm from "../components/TodoForm";
+import { collection, doc, getDocs } from "firebase/firestore";
+import { db } from "../firebase/config";
 
 export default function Home() {
-  const [todos, setTodos] = useState([
-    { title: "아침운동", id: 1 },
-    { title: "제시간에 학원오기", id: 2 },
-    { title: "점심먹기", id: 3 },
-    { title: "복습하기", id: 4 },
-  ]);
+  const [todos, setTodos] = useState(null);
+  console.log(todos);
+
+  //시작할때 데이터 가져오기
+  useEffect(() => {
+    const ref = collection(db, "todos");
+
+    //todos 컬렉션에 모든 문서들 가져오기
+    getDocs(ref).then((snapshot) => {
+      let results = [];
+      //성공시 snapshot.docs에 모든 doc를 넣음
+      snapshot.docs.forEach((doc) => {
+        results.push({ id: doc.id, ...doc.data() });
+      });
+      setTodos(results);
+    });
+  }, []);
 
   return (
     <div className="App">
