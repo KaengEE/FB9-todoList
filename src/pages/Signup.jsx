@@ -1,11 +1,13 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { auth } from "../firebase/config";
+import { useAuthContext } from "../context/useAuthContext";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const { dispatch } = useAuthContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,7 +15,8 @@ export default function Signup() {
     setError(null);
     createUserWithEmailAndPassword(auth, email, password)
       .then((res) => {
-        console.log("유저가입: ", res.user);
+        //console.log("유저가입: ", res.user);
+        dispatch({ type: "LOGIN", payload: res.user }); //가입하면 로그인상태가됨
       })
       .catch((err) => {
         setError(err.message);

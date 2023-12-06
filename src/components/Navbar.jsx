@@ -2,13 +2,16 @@ import { signOut } from "firebase/auth";
 import React from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase/config";
+import { useAuthContext } from "../context/useAuthContext";
 
 export default function Navbar() {
+  const { dispatch } = useAuthContext();
   //로그아웃 함수
   const logout = () => {
     signOut(auth)
       .then(() => {
-        console.log("로그아웃");
+        //console.log("로그아웃");
+        dispatch({ type: "LOGOUT" });
       })
       .catch((err) => {
         console.log(err.message);
