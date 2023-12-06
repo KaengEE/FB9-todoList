@@ -11,7 +11,7 @@ export default function Login() {
 
   return (
     <div>
-      <h2>Login</h2>
+      <h2>로그인</h2>
       <form onSubmit={handleSubmit}>
         <label>
           <span>email:</span>
@@ -31,7 +31,7 @@ export default function Login() {
             value={password}
           />
         </label>
-        <button>log in</button>
+        <button>로그인</button>
       </form>
     </div>
   );
