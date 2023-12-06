@@ -1,10 +1,11 @@
 import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
 import { db } from "../firebase/config";
+import { useAuthContext } from "../context/useAuthContext";
 
 export default function TodoForm() {
   const [newTodo, setNewTodo] = useState("");
-
+  const { user } = useAuthContext();
   const handleSubmit = async (e) => {
     e.preventDefault();
     //console.log(newTodo);
@@ -12,7 +13,7 @@ export default function TodoForm() {
     //컬렉션
     const ref = collection(db, "todos");
     //db에 추가
-    await addDoc(ref, { title: newTodo });
+    await addDoc(ref, { title: newTodo, uid: user.uid });
 
     setNewTodo("");
   };
