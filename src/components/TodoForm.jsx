@@ -19,7 +19,7 @@ export default function TodoForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="todo-form">
       <div className="form-container">
         <label className="label-container">
           <span>새 할일 :</span>

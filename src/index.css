@@ -208,7 +208,7 @@ button {
 }
 
 /* 추가 form */
-form {
+.todo-form {
   display: flex;
   justify-content: center;
   align-items: center;
