@@ -63,26 +63,42 @@ button {
   border: 1px solid #f2f2f2;
   padding: 20px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   overflow: hidden;
 }
 
-.todo-item button {
+.todo-item .dele {
   position: absolute;
   top: 0;
-  right: 0;
-  background: #ddd;
+  right: 0px;
   color: #777;
   border: none;
-  padding: 12px 8px;
+  padding: 8px 8px;
   text-align: center;
   line-height: 0;
-  font-size: 0.9em;
+  font-size: 1.3em;
   cursor: pointer;
 }
 
-.todo-item button:hover {
-  color: #333;
-  background: gray;
+.todo-item .dele:hover {
+  color: red;
+}
+
+.todo-item .edit {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  color: #777;
+  border: none;
+  padding: 8px 8px;
+  text-align: center;
+  line-height: 0;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+.todo-item .edit:hover {
+  color: green;
 }
