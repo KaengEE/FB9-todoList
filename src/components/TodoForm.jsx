@@ -20,16 +20,18 @@ export default function TodoForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        <span>새 할일 :</span>
-        <input
-          required
-          type="text"
-          onChange={(e) => setNewTodo(e.target.value)}
-          value={newTodo}
-        />
-      </label>
-      <button>추가</button>
+      <div className="form-container">
+        <label className="label-container">
+          <span>새 할일 :</span>
+          <input
+            required
+            type="text"
+            onChange={(e) => setNewTodo(e.target.value)}
+            value={newTodo}
+          />
+        </label>
+        <button>추가</button>
+      </div>
     </form>
   );
 }
