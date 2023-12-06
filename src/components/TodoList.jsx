@@ -10,8 +10,8 @@ export default function TodoList({ todos }) {
     await deleteDoc(ref);
     //console.log(id);
   };
-
-  //수정함수
+  //모달열기
+  const openModel = () => {};
 
   return (
     <div className="todo-list">
@@ -20,7 +20,7 @@ export default function TodoList({ todos }) {
           <li key={todo.id} className="todo-item">
             {todo.title}
             {/* 수정아이콘 */}
-            <FiEdit className="edit" onClick={() => handleClick(todo.id)} />
+            <FiEdit className="edit" onClick={() => openModal(todo.id)} />
             {/* 삭제아이콘 */}
             <RiDeleteBin6Line
               className="dele"
