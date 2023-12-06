@@ -38,7 +38,12 @@ export default function Navbar() {
         )}
 
         {/* 유저가 있을때 로그아웃 버튼 활성화 */}
-        {user && <li onClick={logout}>로그아웃</li>}
+        {user && (
+          <>
+            <li> 😃{user.email}님</li>
+            <li onClick={logout}>로그아웃</li>
+          </>
+        )}
       </ul>
     </nav>
   );
